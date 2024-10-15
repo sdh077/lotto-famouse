@@ -1,10 +1,8 @@
 const cheerio = require('cheerio');
 const fs = require('fs');
-const lottery = {
-
-}
+const lottery = require('./src/lib/data/lotto-record.json')
 async function scrap() {
-  for (let drwNo = 1; drwNo <= 1134; drwNo++) {
+  for (let drwNo = 1135; drwNo <= 1141; drwNo++) {
     const hdrwComb = drwNo <= 600 ? 2 : 1
     const data = await fetch("https://dhlottery.co.kr/store.do?method=topStore&pageGubun=L645", {
       "headers": {
