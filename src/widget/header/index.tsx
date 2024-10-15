@@ -18,8 +18,8 @@ const links: LinkType[] = [
 
 const Header = () => {
   return (
-    <div className='sticky w-full h-full top-0 z-50 bg-primary'>
-      <header className='py-2 xl:py-4 text-white'>
+    <div className='sticky w-full h-full top-0 z-50 bg-white border-b-2 border-b-primary'>
+      <header className='py-2 xl:py-4 text-primary'>
         <div className='container mx-auto w-full flex justify-between items-center'>
           <Link href={'/'}>
             <h1 className='text-4xl font-semibold'>

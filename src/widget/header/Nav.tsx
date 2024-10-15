@@ -13,7 +13,7 @@ const Nav = ({ links }: { links: LinkType[] }) => {
       {links.map(link =>
         <Link href={link.path} key={link.name}
           className={`${link.path === pathname && 'text-accent border-b-2 border-accent'} 
-          capitalize font-medium hover:text-accent transition-all`}
+          capitalize font-medium hover:text-accent transition-all hover:border-primary`}
         >
           {link.name}
         </Link>

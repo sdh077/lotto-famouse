@@ -6,6 +6,7 @@ import { useOutsideClick } from "@/hooks/use-outside-click";
 import Iframe from "react-iframe";
 
 export type Card = {
+  id: string;
   description: string;
   title: string;
   items: number[]
@@ -135,7 +136,7 @@ export function ExpandableCard({ cards }: { cards: Card[] }) {
         {cards.map((card, index) => (
           <motion.div
             layoutId={`card-${card.title}-${id}`}
-            key={`card-${card.title}-${id}`}
+            key={`card-${card.id}-${id}`}
             onClick={() => setActive(card)}
             className="p-4 flex flex-col md:flex-row justify-between items-center hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer"
           >
@@ -157,7 +158,7 @@ export function ExpandableCard({ cards }: { cards: Card[] }) {
             </div>
             <motion.button
               layoutId={`button-${card.title}-${id}`}
-              className="min-w-28 px-4 py-2 text-sm rounded-full font-bold bg-gray-100 hover:bg-green-500 hover:text-white text-black mt-4 md:mt-0"
+              className="min-w-28 px-4 py-2 text-sm rounded-full font-bold bg-gray-100 hover:bg-primary hover:text-white text-black mt-4 md:mt-0"
             >
               {card.ctaText}
             </motion.button>
