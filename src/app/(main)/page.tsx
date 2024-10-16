@@ -1,67 +1,21 @@
-'use client'
+import { NEXT_PUBLIC_API_URL } from "@/lib/constants";
+import BestShop from "@/pages/BestShop";
+import LatestLotto from "@/pages/LatestLotto";
+import LocationInfo from "@/pages/LocationInfo";
 
-import records from '@/lib/data/lotto-record.json';
-import location from '@/lib/data/location.json';
-import { Button } from "@/components/ui/button";
-import { useFilterStore } from '@/stores/filter-store-provider';
-import { useEffect, useState } from 'react';
-import { Card, ExpandableCard } from '@/widget/expandable-card';
-import { ClientPagination } from '@/widget/Pagination';
+const getData = async () => {
+  return await fetch(`${NEXT_PUBLIC_API_URL}/api/init`).then(res => res.json())
+}
 
-export default function Home() {
-
+export default async function Home() {
+  const { latestNo } = await getData()
   return (
-    <div className="relative grid grid-cols-2 gap-4 container pt-8 h-full">
-      <Location />
+    <div className="relative grid grid-cols-1 md:grid-cols-2 gap-4 container pt-8 h-full">
+      <div className='flex flex-col gap-4'>
+        <LatestLotto latestNo={latestNo} />
+        <LocationInfo />
+      </div>
       <BestShop />
     </div>
   );
 }
-function Location() {
-  const { address1, address2, setAddress } = useFilterStore((state) => state)
-  const select = location.find(local => local.name === address1) ?? location[0]
-  return (
-    <div className='sticky top-24 w-full h-fit'>
-      <div className='flex gap-2 flex-wrap w-full mb-4'>
-        {location.map(local =>
-          <div key={local.fullname}>
-            <Button variant={local.name === address1 ? 'default' : 'outline'} onClick={() => setAddress(local.name === address1 ? '' : local.name, '')}>{local.name}</Button>
-          </div>
-        )}
-      </div>
-      <div className="grid grid-cols-6 gap-1 my-2">
-        {select.sub.map(item =>
-          <Button
-            onClick={() => setAddress(select.name, item === address2 ? '' : item)}
-            variant={item === address2 ? 'default' : 'outline'} key={item}>{item}</Button>
-        )}
-      </div>
-    </div>
-  )
-}
-
-function BestShop() {
-  const [pageNo, setPageNo] = useState(1)
-  const { address1, address2 } = useFilterStore((state) => state)
-  const shops = Object.entries(records).sort(([, a], [, b]) => b.items.length - a.items.length)
-    .filter(([, shop]) => shop.location.startsWith(`${address1} ${address2}`))
-  const cards: Card[] = shops.map(([key, shop]) => ({
-    id: `${address1}-${address2}-${key}`,
-    description: shop.location,
-    title: shop.name,
-    items: shop.items,
-    ctaText: '지도보기',
-    ctaLink: `https://dhlottery.co.kr/store.do?method=topStoreLocation&gbn=lotto&rtlrId=${key}`,
-  })).slice((pageNo - 1) * 12, pageNo * 12)
-  useEffect(() => {
-    setPageNo(1)
-  }, [address1, address2])
-  return (
-    <div>
-      <ExpandableCard cards={cards} />
-      <ClientPagination total={cards.length} pageNo={pageNo} setPageNo={setPageNo} />
-    </div>
-  )
-}
-
-

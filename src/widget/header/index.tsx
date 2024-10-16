@@ -20,19 +20,17 @@ const Header = () => {
   return (
     <div className='sticky w-full h-full top-0 z-50 bg-white border-b-2 border-b-primary'>
       <header className='py-2 xl:py-4 text-primary'>
-        <div className='container mx-auto w-full flex justify-between items-center'>
+        <div className='container mx-auto w-full flex justify-start items-center'>
           <Link href={'/'}>
-            <h1 className='text-4xl font-semibold'>
-              <Logo />
-            </h1>
+            <Logo />
           </Link>
-          <div className="hidden lg:block">
+          {/* <div className="hidden lg:block">
             <Nav links={links} />
           </div>
 
           <div className="lg:hidden ">
             <MobileNav links={links} />
-          </div>
+          </div> */}
         </div>
 
       </header>

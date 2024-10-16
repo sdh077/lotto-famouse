@@ -83,7 +83,7 @@ export function ExpandableCard({ cards }: { cards: Card[] }) {
             >
 
               <div>
-                <div className="flex justify-between items-start p-4">
+                <div className="flex justify-between items-center p-4">
                   <div className="">
                     <motion.h3
                       layoutId={`title-${active.title}-${id}`}
@@ -103,9 +103,9 @@ export function ExpandableCard({ cards }: { cards: Card[] }) {
                     layoutId={`button-${active.title}-${id}`}
                     href={active.ctaLink}
                     target="_blank"
-                    className="px-4 py-3 text-sm rounded-full font-bold bg-green-500 text-white"
+                    className="px-4 py-3 text-sm rounded-full w-[100px] text-center font-bold bg-primary text-white"
                   >
-                    {active.ctaText}
+                    지도보기
                   </motion.a>
                 </div>
                 <div className="pt-4 relative px-4">
@@ -114,7 +114,7 @@ export function ExpandableCard({ cards }: { cards: Card[] }) {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="text-neutral-600 text-xs md:text-sm lg:text-base h-40 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
+                    className="text-neutral-600 text-xs md:text-sm lg:text-base h-full md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
                   >
                     {<div>
                       <Iframe url={active.ctaLink}
@@ -132,7 +132,7 @@ export function ExpandableCard({ cards }: { cards: Card[] }) {
           </div>
         ) : null}
       </AnimatePresence>
-      <ul className="max-w-2xl mx-auto w-full gap-4">
+      <ul className="max-w-2xl mx-auto w-full gap-4 grid grid-cols-2 md:grid-cols-1">
         {cards.map((card, index) => (
           <motion.div
             layoutId={`card-${card.title}-${id}`}
