@@ -4,7 +4,7 @@ import LatestLotto from "@/page/LatestLotto";
 import LocationInfo from "@/page/LocationInfo";
 
 const getData = async () => {
-  return await fetch(`${NEXT_PUBLIC_API_URL}/api/init`).then(res => res.json())
+  return await fetch(`${NEXT_PUBLIC_API_URL}/api/init`).then(res => res.json()).catch(() => { })
 }
 
 export default async function Home() {
