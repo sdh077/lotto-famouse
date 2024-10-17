@@ -1,10 +1,12 @@
 'use client'
 
 import { lottoApi } from "@/app/api/lotto/route";
-import { ArrowLeftIcon, PlusIcon, ArrowRightIcon } from "@radix-ui/react-icons";
+import { PlusIcon } from "@radix-ui/react-icons";
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import { Skeleton } from "@/components/ui/skeleton"
+import { BiCaretLeft, BiCaretRight } from "react-icons/bi";
+
 
 export function SkeletonView() {
   return (
@@ -31,8 +33,10 @@ export default function LatestLotto({ latestNo }: { latestNo: number }) {
   if (query.isLoading) return <SkeletonView />
   return (
     <div className="relative border border-slate-800 backdrop-blur-xl flex flex-col items-center justify-center py-8 text-sm antialiased">
-      <div className="flex justify-center mb-4 scroll-m-20 text-2xl font-bold tracking-tight text-black dark:text-white">
-        <span onClick={() => setDrwNo(drwNo - 1)}><ArrowLeftIcon /></span> [{drwNo}회] {data.drawDate} {drwNo < latestNo && <span onClick={() => setDrwNo(drwNo + 1)}><ArrowRightIcon /></span>}
+      <div className="flex justify-center items-center mb-4 scroll-m-20 text-2xl font-bold tracking-tight text-black dark:text-white">
+        <span onClick={() => setDrwNo(drwNo - 1)}><BiCaretLeft className="text-2xl" /></span>
+        [{drwNo}회]
+        {data.drawDate} {drwNo < latestNo && <span onClick={() => setDrwNo(drwNo + 1)}><BiCaretRight className="text-2xl" /></span>}
       </div>
       <div className="relative grid grid-cols-8">
         {data.winningNumbers.map(winningNumber =>

@@ -1,4 +1,121 @@
 {
+  "1138": {
+    "rankingData": [
+      {
+        "rank": "1등",
+        "totalWinners": "26,637,195,004원",
+        "prize": "14"
+      },
+      {
+        "rank": "2등",
+        "totalWinners": "4,439,532,500원",
+        "prize": "50"
+      },
+      {
+        "rank": "3등",
+        "totalWinners": "4,439,535,240원",
+        "prize": "2,865"
+      },
+      {
+        "rank": "4등",
+        "totalWinners": "7,284,500,000원",
+        "prize": "145,690"
+      },
+      {
+        "rank": "5등",
+        "totalWinners": "12,024,995,000원",
+        "prize": "2,404,999"
+      }
+    ],
+    "bonusNumber": "35",
+    "winningNumbers": [
+      "14",
+      "16",
+      "19",
+      "20",
+      "29",
+      "34"
+    ],
+    "drawDate": "2024년 09월 21일 추첨"
+  },
+  "1139": {
+    "rankingData": [
+      {
+        "rank": "1등",
+        "totalWinners": "28,177,382,636원",
+        "prize": "13"
+      },
+      {
+        "rank": "2등",
+        "totalWinners": "4,696,230,450원",
+        "prize": "75"
+      },
+      {
+        "rank": "3등",
+        "totalWinners": "4,696,230,960원",
+        "prize": "3,240"
+      },
+      {
+        "rank": "4등",
+        "totalWinners": "8,161,800,000원",
+        "prize": "163,236"
+      },
+      {
+        "rank": "5등",
+        "totalWinners": "13,226,300,000원",
+        "prize": "2,645,260"
+      }
+    ],
+    "bonusNumber": "18",
+    "winningNumbers": [
+      "5",
+      "12",
+      "15",
+      "30",
+      "37",
+      "40"
+    ],
+    "drawDate": "2024년 09월 28일 추첨"
+  },
+  "1140": {
+    "rankingData": [
+      {
+        "rank": "1등",
+        "totalWinners": "27,357,887,256원",
+        "prize": "12"
+      },
+      {
+        "rank": "2등",
+        "totalWinners": "4,559,647,911원",
+        "prize": "83"
+      },
+      {
+        "rank": "3등",
+        "totalWinners": "4,559,649,780원",
+        "prize": "3,345"
+      },
+      {
+        "rank": "4등",
+        "totalWinners": "7,917,150,000원",
+        "prize": "158,343"
+      },
+      {
+        "rank": "5등",
+        "totalWinners": "13,224,945,000원",
+        "prize": "2,644,989"
+      }
+    ],
+    "bonusNumber": "15",
+    "winningNumbers": [
+      "7",
+      "10",
+      "22",
+      "29",
+      "31",
+      "38"
+    ],
+    "drawDate": "2024년 10월 05일 추첨"
+  },
   "1141": {
     "rankingData": [
       {
