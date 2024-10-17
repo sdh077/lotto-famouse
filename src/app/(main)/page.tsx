@@ -1,7 +1,7 @@
 import { NEXT_PUBLIC_API_URL } from "@/lib/constants";
-import BestShop from "@/pages/BestShop";
-import LatestLotto from "@/pages/LatestLotto";
-import LocationInfo from "@/pages/LocationInfo";
+import BestShop from "@/page/BestShop";
+import LatestLotto from "@/page/LatestLotto";
+import LocationInfo from "@/page/LocationInfo";
 
 const getData = async () => {
   return await fetch(`${NEXT_PUBLIC_API_URL}/api/init`).then(res => res.json())

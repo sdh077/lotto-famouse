@@ -1,7 +1,6 @@
 'use client'
 
 import { lottoApi } from "@/app/api/lotto/route";
-import { cn } from "@/lib/utils";
 import { PlusIcon } from "@radix-ui/react-icons";
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
@@ -21,7 +20,7 @@ export default function LatestLotto({ latestNo }: { latestNo: number }) {
   return (
     <div className="relative border border-slate-800 backdrop-blur-xl flex flex-col items-center justify-center py-8 text-sm antialiased">
       <div className="flex justify-center mb-4 scroll-m-20 text-2xl font-bold tracking-tight text-black dark:text-white">
-        [{drwNo}회] {data.drawDate}
+        [{drwNo}회] {data.drawDate} <span onClick={() => setDrwNo(drwNo - 1)}>이전</span>
       </div>
       <div className="relative grid grid-cols-8">
         {data.winningNumbers.map(winningNumber =>

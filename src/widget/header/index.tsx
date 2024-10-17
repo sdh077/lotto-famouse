@@ -1,20 +1,18 @@
 import React from 'react'
 import Link from "next/link";
-import Nav from './Nav';
-import MobileNav from './MobileNav';
 import Logo from './Logo';
 
 export type LinkType = {
   name: string;
   path: string;
 }
-const links: LinkType[] = [
-  {
-    name: "home",
-    path: '/'
-  },
+// const links: LinkType[] = [
+//   {
+//     name: "home",
+//     path: '/'
+//   },
 
-]
+// ]
 
 const Header = () => {
   return (

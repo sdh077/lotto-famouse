@@ -55,11 +55,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <FilterStoreProvider>
-          <Provider>
+        <Provider>
+          <FilterStoreProvider>
             {children}
-          </Provider>
-        </FilterStoreProvider>
+          </FilterStoreProvider>
+        </Provider>
         <AnalyticsComponent />
       </body>
     </html>

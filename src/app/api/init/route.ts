@@ -1,7 +1,7 @@
 import axios from 'axios';
 import * as cheerio from 'cheerio';
 
-export async function GET(request: Request) {
+export async function GET() {
   const url = 'https://dhlottery.co.kr/gameResult.do?method=byWin';
   const { data } = await axios.get(url);
 

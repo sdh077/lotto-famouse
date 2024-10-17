@@ -1,4 +1,3 @@
-import axios from 'axios';
 import * as cheerio from 'cheerio';
 interface RankingData {
   rank: string;
@@ -19,9 +18,6 @@ export async function GET(request: Request) {
   return Response.json(data)
 }
 async function fetchLottoData(drwNo: string): Promise<lottoApi> {
-  const url = 'https://dhlottery.co.kr/gameResult.do?method=byWin';
-  // 웹 페이지의 HTML을 가져옴
-
   const data = await
     fetch("https://dhlottery.co.kr/gameResult.do?method=byWin", {
       "headers": {

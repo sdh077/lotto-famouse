@@ -7,7 +7,7 @@ import {
   QueryClientProvider,
 } from '@tanstack/react-query';
 const queryClient = new QueryClient()
-export default function Provider({ children, ...props }: { children: React.ReactNode }) {
+export default function Provider({ children }: { children: React.ReactNode }) {
   const [isMount, setMount] = useState(false)
 
   useEffect(() => {
