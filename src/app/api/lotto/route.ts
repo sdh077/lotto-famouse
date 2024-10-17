@@ -1,4 +1,16 @@
 import * as cheerio from 'cheerio';
+import info from '@public/info.json'
+import fs from 'fs';
+
+function saveJsonToFile(filename: string, jsonData: lottoJson) {
+  fs.writeFile(`public/${filename}`, JSON.stringify(jsonData, null, 2), 'utf8', (err) => {
+    if (err) {
+      console.error('Error writing file:', err);
+    } else {
+      console.log('File has been saved');
+    }
+  });
+}
 interface RankingData {
   rank: string;
   totalWinners: string;
@@ -10,11 +22,16 @@ export interface lottoApi {
   bonusNumber: string
   drawDate: string
 }
+interface lottoJson { [x: string]: lottoApi }
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url)
-
-  const data = await fetchLottoData(searchParams.get('drwNo') ?? '1141');
-
+  const drwNo = searchParams.get('drwNo') ?? '1141'
+  const arr = info as lottoJson
+  const keys = Object.keys(arr)
+  if (keys.includes(drwNo)) return Response.json(arr[drwNo])
+  const data = await fetchLottoData(drwNo);
+  arr[drwNo] = data
+  saveJsonToFile('info.json', arr)
   return Response.json(data)
 }
 async function fetchLottoData(drwNo: string): Promise<lottoApi> {
