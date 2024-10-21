@@ -1,9 +1,13 @@
+import { NEXT_PUBLIC_API_URL } from "@/lib/constants";
 import BestShop from "@/page/BestShop";
 import LatestLotto from "@/page/LatestLotto";
 import LocationInfo from "@/page/LocationInfo";
+export const revalidate = 3600 // revalidate at most every hour
 
 const getData = async () => {
-  return await fetch(`https://lotto-famous.vercel.app/api/init`).then(res => res.json()).catch(() => 1141)
+  return await fetch(`${NEXT_PUBLIC_API_URL}/api/init`).then(res => {
+    return res.json()
+  }).catch(() => 1140)
 }
 
 export default async function Home() {

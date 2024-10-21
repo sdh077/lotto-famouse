@@ -1,6 +1,6 @@
 'use client'
 
-import records from '@/lib/data/lotto-record.json';
+import records from '@public/file.json';
 import { useFilterStore } from '@/stores/filter-store-provider';
 import { useEffect, useState } from 'react';
 import { Card, ExpandableCard } from '@/widget/expandable-card';
