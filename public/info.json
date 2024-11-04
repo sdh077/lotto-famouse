@@ -233,6 +233,45 @@
     ],
     "drawDate": "2024년 10월 19일 추첨"
   },
+  "1143": {
+    "rankingData": [
+      {
+        "rank": "1등",
+        "totalWinners": "28,002,227,253원",
+        "prize": "11"
+      },
+      {
+        "rank": "2등",
+        "totalWinners": "4,667,037,930원",
+        "prize": "90"
+      },
+      {
+        "rank": "3등",
+        "totalWinners": "4,667,040,034원",
+        "prize": "3,154"
+      },
+      {
+        "rank": "4등",
+        "totalWinners": "7,820,000,000원",
+        "prize": "156,400"
+      },
+      {
+        "rank": "5등",
+        "totalWinners": "13,060,145,000원",
+        "prize": "2,612,029"
+      }
+    ],
+    "bonusNumber": "6",
+    "winningNumbers": [
+      "10",
+      "16",
+      "17",
+      "27",
+      "28",
+      "36"
+    ],
+    "drawDate": "2024년 10월 26일 추첨"
+  },
   "undefined": {
     "rankingData": [
       {
